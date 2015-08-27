@@ -35,7 +35,14 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<?php 
+						use App\Models\Project;
+
+						$projects = Project::where('status', '=', Project::ACTIVE)->get();
+					?>
+					@foreach ($projects as $project)
+					<li class="{{ (Session::get('project_id') != null & Session::get('project_id') == $project->id) ? 'active' : '' }}"><a href="{{ url('/report/' . $project->id) }}">{{ $project->name }}</a></li>
+					@endforeach
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

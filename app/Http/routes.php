@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
-
-Route::get('report', 'ReportController@index');
+Route::get('report/{project_id}', 'ReportController@index');
 Route::get('report/create', 'ReportController@create');
 
 Route::controllers([

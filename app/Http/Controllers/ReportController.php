@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Session;
+use App\Models\Project;
+
 class ReportController extends Controller {
 
 	/**
@@ -22,10 +25,14 @@ class ReportController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($projectId)
 	{
 		//
-		return view('reports.merchants.index');
+		$project   = Project::find($projectId);
+		$merchants = $project->merchants()->get();
+		Session::set('project_id', $project->id);
+
+		return view('reports.merchants.index')->with('merchants', $merchants);
 	}
 
 	/**

@@ -21,66 +21,23 @@
 				</thead>
 
 				<tbody>
+					@foreach ($merchants as $merchant)
+					<?php
+						$report = $merchant->report()->first();
+					?>
 					<tr>
-						<td>1</td>
-						<td>Yokozuna Japanese Cuisine</td>
-						<td>Fraser's Place @ Jalan Perak</td>
-						<td>Mark</td>
-						<td>03-21664633 / 012-2873384</td>
-						<td>Rejected</td>
+						<td>{{ $report->id }}</td>
+						<td>{{ $merchant->name }}</td>
+						<td>{{ $merchant->address }}</td>
+						<td>{{ $merchant->pic }}</td>
+						<td>{{ $merchant->contact_no }}</td>
+						<td><span class="label label-{{ ($report->merchant_status == true) ? 'success' : 'warning' }}">{{ ($report->merchant_status == true) ? 'Accepted' : 'Rejected' }}</span></td>
 						<td>
-							<a href="#" class="btn btn-xs btn-default">Edit</a>
-							<a href="#" class="btn btn-xs btn-danger">Delete</a>
-						</td>
-					</tr>	
-					<tr>
-						<td>1</td>
-						<td>Yokozuna Japanese Cuisine</td>
-						<td>Fraser's Place @ Jalan Perak</td>
-						<td>Mark</td>
-						<td>03-21664633 / 012-2873384</td>
-						<td>Rejected</td>
-						<td>
-							<a href="#" class="btn btn-xs btn-default">Edit</a>
-							<a href="#" class="btn btn-xs btn-danger">Delete</a>
+							<a href="{{ url('report/edit/' . $report->id) }}" class="btn btn-xs btn-default">Edit</a>
+							<a href="{{ url('report/delete/' . $report->id) }}" class="btn btn-xs btn-danger">Delete</a>
 						</td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>Yokozuna Japanese Cuisine</td>
-						<td>Fraser's Place @ Jalan Perak</td>
-						<td>Mark</td>
-						<td>03-21664633 / 012-2873384</td>
-						<td>Rejected</td>
-						<td>
-							<a href="#" class="btn btn-xs btn-default">Edit</a>
-							<a href="#" class="btn btn-xs btn-danger">Delete</a>
-						</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Yokozuna Japanese Cuisine</td>
-						<td>Fraser's Place @ Jalan Perak</td>
-						<td>Mark</td>
-						<td>03-21664633 / 012-2873384</td>
-						<td>Rejected</td>
-						<td>
-							<a href="#" class="btn btn-xs btn-default">Edit</a>
-							<a href="#" class="btn btn-xs btn-danger">Delete</a>
-						</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Yokozuna Japanese Cuisine</td>
-						<td>Fraser's Place @ Jalan Perak</td>
-						<td>Mark</td>
-						<td>03-21664633 / 012-2873384</td>
-						<td>Rejected</td>
-						<td>
-							<a href="#" class="btn btn-xs btn-default">Edit</a>
-							<a href="#" class="btn btn-xs btn-danger">Delete</a>
-						</td>
-					</tr>
+					@endforeach	
 				</tbody>
 			</table>
 		</div>
