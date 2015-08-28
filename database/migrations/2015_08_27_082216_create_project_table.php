@@ -19,9 +19,8 @@ class CreateProjectTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->integer('status')->default(0);
-			$table->boolean('deleted')->default(false);
-			$table->timestamps('created_at');
+			$table->integer('status')->default(2);
+			$table->timestamps();
 		});
 	}
 

@@ -8,9 +8,6 @@ class Project extends Model
 	protected $table      = 'ozr_project';
 	protected $fillable   = array('name', 'status');
 
-	const ACTIVE   = '2';
-	const INACTIVE = '1';
-
 	public function categories()
 	{
 		return $this->hasMany('App\Models\Category', 'project_id', 'id');

@@ -21,9 +21,8 @@ class CreateCategoryTable extends Migration {
 			$table->integer('project_id')->unsigned(true);
 			$table->foreign('project_id')->references('id')->on('ozr_project');
 			$table->string('name');
-			$table->integer('status')->default(0);
-			$table->boolean('deleted')->default(false);
-			$table->timestamps('created_at');
+			$table->integer('status')->default(2);
+			$table->timestamps();
 		});
 	}
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Status;
 use App\Models\Project;
 use App\Models\Merchant;
 use App\Models\Report;
@@ -26,7 +27,7 @@ class ReportSeeder extends Seeder {
 			'merchant_status' => false,
 			'action_taken'    => 'Appointment made.',
 			'remarks'         => 'Potential customer.',
-			'status'          => Report::ACTIVE
+			'status'          => Status::ACTIVE
 		);
 		Report::create($report);
 
@@ -40,7 +41,7 @@ class ReportSeeder extends Seeder {
 			'merchant_status' => false,
 			'action_taken'    => 'Appointment made.',
 			'remarks'         => 'Potential customer.',
-			'status'          => Report::ACTIVE
+			'status'          => Status::ACTIVE
 		);
 		Report::create($report);
 	}

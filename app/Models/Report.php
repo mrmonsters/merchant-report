@@ -17,16 +17,13 @@ class Report extends Model
 		'status'
 	);
 
-	const ACTIVE   = '2';
-	const INACTIVE = '1';
-
 	public function project()
 	{
-		return $this->belongsTo('App\Models\Project', 'id', 'project_id');
+		return $this->belongsTo('App\Models\Project');
 	}
 
 	public function merchant()
 	{
-		return $this->belongsTo('App\Models\Merchant', 'id', 'merchant_id');
+		return $this->belongsTo('App\Models\Merchant');
 	}
 }

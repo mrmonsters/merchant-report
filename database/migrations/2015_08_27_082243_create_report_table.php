@@ -27,9 +27,8 @@ class CreateReportTable extends Migration {
 			$table->boolean('merchant_status');
 			$table->string('action_taken');
 			$table->string('remarks');
-			$table->integer('status')->default(0);
-			$table->boolean('deleted')->default(false);
-			$table->timestamps('created_at');
+			$table->integer('status')->default(2);
+			$table->timestamps();
 		});
 	}
 

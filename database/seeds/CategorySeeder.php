@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Status;
 use App\Models\Project;
 use App\Models\Category;
 
@@ -28,7 +29,7 @@ class CategorySeeder extends Seeder {
 			$model = array(
 				'project_id' => $projectId,
 				'name'       => $beauty,
-				'status'     => Category::ACTIVE
+				'status'     => Status::ACTIVE
 			);
 
 			Category::create($model);
@@ -54,7 +55,7 @@ class CategorySeeder extends Seeder {
 			$model = array(
 				'project_id' => $projectId,
 				'name'       => $food,
-				'status'     => Category::ACTIVE
+				'status'     => Status::ACTIVE
 			);
 		
 			Category::create($model);

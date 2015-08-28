@@ -27,9 +27,8 @@ class CreateMerchantTable extends Migration {
 			$table->string('pic');
 			$table->string('email');
 			$table->string('contact_no');
-			$table->integer('status')->default(0);
-			$table->boolean('deleted')->default(false);
-			$table->timestamps('created_at');
+			$table->integer('status')->default(2);
+			$table->timestamps();
 		});
 	}
 

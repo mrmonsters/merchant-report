@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Status;
 use App\Models\Project;
 use App\Models\Category;
 use App\Models\Merchant;
@@ -26,7 +27,7 @@ class MerchantSeeder extends Seeder {
 			'pic'         => 'Michael',
 			'email'       => 'michael@gmail.com',
 			'contact_no'  => '03-45678912 / 012-3456789',
-			'status'	  => Merchant::ACTIVE
+			'status'	  => Status::ACTIVE
 		);
 		Merchant::create($merchant);
 
@@ -40,7 +41,7 @@ class MerchantSeeder extends Seeder {
 			'pic'         => 'Mark',
 			'email'       => 'mark@gmail.com',
 			'contact_no'  => '03-21664633 / 012-2873384',
-			'status'	  => Merchant::ACTIVE
+			'status'	  => Status::ACTIVE
 		);
 		Merchant::create($merchant);
 	}

@@ -6,19 +6,16 @@ class Merchant extends Model
 {
 	protected $primaryKey = 'id';
 	protected $table      = 'ozr_merchant';
-	protected $fillable   = array('project_id', 'name', 'category_id', 'address', 'pic', 'email', 'contact_no');
-
-	const ACTIVE   = '2';
-	const INACTIVE = '1';
+	protected $fillable   = array('project_id', 'name', 'category_id', 'address', 'pic', 'email', 'contact_no', 'status');
 
 	public function project()
 	{
-		return $this->belongsTo('App\Models\Merchant', 'id', 'project_id');
+		return $this->belongsTo('App\Models\Merchant');
 	}
 
 	public function category()
 	{
-		return $this->belongsTo('App\Models\Category', 'id', 'category_id');
+		return $this->belongsTo('App\Models\Category');
 	}
 
 	public function report()
